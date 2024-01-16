@@ -16,21 +16,19 @@ export default function App() {
   return (
     <div>
       {showIntro ? (
-        <div className="flex gap-4 justify-center items-center h-[80vh]">
-          <div className="flex flex-col gap-3 rounded-lg shadow-xl p-4">
-            <p className="text-blue-700 text-xl font-bold">What makes it unique</p>
+        <div className="flex gap-4 justify-center items-center h-[90vh]">
+          <div className="flex flex-col gap-4 md:gap-7 rounded-lg shadow-xl p-4">
+            <p className="text-blue-500 text-xl font-bold">What makes it unique</p>
 
             <span>Technology stacks: React + Typescript + Tailwind</span>
-            <span>Proper replication of the given web pages</span>
+            <span>Zustand for State Management</span>
+            <span>Proper replication of the given web page</span>
             <span>Fully Responsive Design</span>
-            <span>Proper form validation (using React Hook Form + Yup)</span>
-            <span>Reusable Components</span>
-            <span>Google Authentication: Login, Logout, use of local storage</span>
-            <span>Clean code</span>
-
+            <span>Clean code and Best Practices</span>
+            <p className="font-extrabold text-2xl text-blue-700">By Tushar Bhatt</p>
             {showContinue ? (
               <button
-                className="fadeIn animate-bounce mt-3 p-3"
+                className="fadeIn hover:bg-blue-500 hover:text-white hover:border-blue-500 animate-bounce mt-7 p-3 border-2 border-slate-300 rounded-xl"
                 onClick={() => setShowIntro(false)}
               >
                 Continue
