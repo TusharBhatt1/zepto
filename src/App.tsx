@@ -38,7 +38,7 @@ export default function App() {
             </p>
             {showContinue ? (
               <button
-                className="fadeIn hover:bg-blue-500 hover:text-white hover:border-blue-500 animate-bounce mt-7 p-3 border-2 border-slate-300 rounded-xl"
+                className="fadeIn hover:bg-blue-500 hover:text-white hover:border-blue-500 animate-bounce mt-7 p-3 border-2 border-black-300 rounded-xl"
                 onClick={() => setShowIntro(false)}
               >
                 Continue
