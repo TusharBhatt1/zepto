@@ -35,7 +35,7 @@ export default function Search() {
        {  filteredUsers.length===0  ? <p className="w-auto">Nothing to select</p>:
         filteredUsers.map((user) => (
           <div onClick={()=>handleAdd(user)} className="p-2 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-10 hover:cursor-pointer hover:bg-slate-100 rounded-md">
-            <div className="flex">
+            <div className="flex gap-2">
               <span>{user.icon}</span>
               <p>{user.userName}</p>
             </div>
