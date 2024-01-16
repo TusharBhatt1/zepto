@@ -7,6 +7,15 @@ export default function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [showContinue, setShowContinue] = useState(false);
 
+  const uniquePoints = [
+    "Technology stacks: React + Typescript + Tailwind",
+    "Zustand for State Management",
+    "Proper replication of the given web page",
+    "Fully Responsive Design",
+    "Custom Hooks",
+    "Clean code and Best Practices",
+  ];
+
   useEffect(() => {
     setTimeout(() => {
       setShowContinue(true);
@@ -17,15 +26,16 @@ export default function App() {
     <div>
       {showIntro ? (
         <div className="flex gap-4 justify-center items-center h-[90vh]">
-          <div className="flex flex-col gap-4 md:gap-7 rounded-lg shadow-xl p-4">
-            <p className="text-blue-500 text-xl font-bold">What makes it unique</p>
-
-            <span>Technology stacks: React + Typescript + Tailwind</span>
-            <span>Zustand for State Management</span>
-            <span>Proper replication of the given web page</span>
-            <span>Fully Responsive Design</span>
-            <span>Clean code and Best Practices</span>
-            <p className="font-extrabold text-2xl text-blue-700">By Tushar Bhatt</p>
+          <div className="flex flex-col gap-2 md:gap-7 rounded-lg shadow-xl p-4">
+            <p className="text-black text-xl font-bold">
+              What makes it unique
+            </p>
+            {uniquePoints.map((point) => (
+              <span>{point}</span>
+            ))}
+            <p className="font-extrabold text-2xl text-blue-700">
+              By Tushar Bhatt
+            </p>
             {showContinue ? (
               <button
                 className="fadeIn hover:bg-blue-500 hover:text-white hover:border-blue-500 animate-bounce mt-7 p-3 border-2 border-slate-300 rounded-xl"
