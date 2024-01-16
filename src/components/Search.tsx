@@ -34,7 +34,7 @@ export default function Search() {
       <span className=' text-end flex justify-end items-center w-[20px] text-xl hover:cursor-pointer rounded-full' onClick={()=>setShowList(false)}><IoMdClose/></span>
        {  filteredUsers.length===0  ? <p className="w-auto">Nothing to select</p>:
         filteredUsers.map((user) => (
-          <div onClick={()=>handleAdd(user)} className="p-2 flex justify-between items-center gap-10 hover:cursor-pointer hover:bg-slate-100 rounded-md">
+          <div onClick={()=>handleAdd(user)} className="p-2 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-10 hover:cursor-pointer hover:bg-slate-100 rounded-md">
             <div className="flex">
               <span>{user.icon}</span>
               <p>{user.userName}</p>
