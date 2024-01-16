@@ -1,6 +1,6 @@
 import { useState } from "react";
-import useAllUsers from "../hook/useAllUsers";
-import useSelectedUsers from "../hook/useSelectedUsers";
+import useAllUsers from "../hooks/useAllUsers";
+import useSelectedUsers from "../hooks/useSelectedUsers";
 import { IoMdClose } from "react-icons/io";
 
 export interface UserType {

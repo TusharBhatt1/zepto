@@ -1,5 +1,5 @@
-import useAllUsers from '../hook/useAllUsers'
-import useSelectedUsers from '../hook/useSelectedUsers'
+import useAllUsers from '../hooks/useAllUsers'
+import useSelectedUsers from '../hooks/useSelectedUsers'
 import { UserType } from './Search'
 import {IoMdClose} from "react-icons/io"
 
