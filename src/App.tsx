@@ -51,7 +51,7 @@ export default function App() {
         </div>
       ) : (
         <div className="flex justify-center items-center mt-4">
-          <div className="w-1/2 m-auto flex flex-col gap-7">
+          <div className="w-full sm:w-1/2 m-auto flex flex-col gap-7">
             <p className="text-xl font-bold text-blue-500">Pick User</p>
             <div className="flex flex-col">
               <div className="flex flex-wrap gap-2">
