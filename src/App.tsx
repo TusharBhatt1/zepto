@@ -2,10 +2,13 @@ import ChatBot from "./components/ChatBot";
 import Search from "./components/Search";
 import Selected from "./components/Selected";
 import { useState, useEffect } from "react";
+import useSelectedUsers from "./hooks/useSelectedUsers";
+import { userArray } from "./assets/Users";
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [showContinue, setShowContinue] = useState(false);
+  const { selectedUsers } = useSelectedUsers();
 
   const uniquePoints = [
     "Technology stacks: React + Typescript + Tailwind",
@@ -19,7 +22,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       setShowContinue(true);
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
@@ -27,9 +30,7 @@ export default function App() {
       {showIntro ? (
         <div className="flex gap-4 justify-center items-center h-[90vh]">
           <div className="flex flex-col gap-2 md:gap-7 rounded-lg shadow-xl p-4">
-            <p className="text-black text-xl font-bold">
-              What makes it unique
-            </p>
+            <p className="text-black text-xl font-bold">What makes it unique</p>
             {uniquePoints.map((point) => (
               <span>{point}</span>
             ))}
@@ -38,7 +39,7 @@ export default function App() {
             </p>
             {showContinue ? (
               <button
-                className="fadeIn hover:bg-blue-500 hover:text-white hover:border-blue-500 animate-bounce mt-7 p-3 border-2 border-black-300 rounded-xl"
+                className=" hover:bg-blue-500 hover:text-white hover:border-blue-500 animate-bounce mt-7 p-3 border border-black rounded-xl"
                 onClick={() => setShowIntro(false)}
               >
                 Continue
@@ -50,9 +51,17 @@ export default function App() {
           <div className="loader"></div>
         </div>
       ) : (
-        <div className="flex justify-center items-center mt-4 p-4">
-          <div className="w-full sm:w-1/2 m-auto flex flex-col gap-7">
-            <p className="text-xl font-bold text-blue-500">Pick User</p>
+        <div className="flex flex-col  sm:h-[90vh] items-center justify-between p-4 mt-4">
+          <div className="w-full sm:w-1/2 flex flex-col gap-7">
+            <p className="text-xl font-bold text-blue-500">
+              Pick User{" "}
+              {selectedUsers.length > 0 && (
+                <span className="text-sm text-slate-400">
+                  {" "}
+                  ({selectedUsers.length} of {userArray.length})
+                </span>
+              )}
+            </p>
             <div className="flex flex-col">
               <div className="flex flex-wrap gap-2">
                 <Selected />
@@ -60,6 +69,18 @@ export default function App() {
                 <ChatBot />
               </div>
               <hr className="border-2 border-blue-500" />
+            </div>
+          </div>
+          <div className="text-start">
+            <p className="font-bold">
+              * Also Implemented additional Backspace feature *
+            </p>
+            <div className="text-slate-400 flex flex-col mt-2 gap-2">
+            <span>
+              Pressing backspace when field is empty <br/> shows the recently added
+              item.
+            </span>
+            <span>Again backspace will remove that item from selected.</span>
             </div>
           </div>
         </div>

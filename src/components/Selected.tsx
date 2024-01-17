@@ -16,9 +16,9 @@ export default function Selected() {
     <div>
         <div className='flex gap-4 flex-wrap'>
             {selectedUsers.map((user)=>(
-                <div className='flex items-center gap-2 p-2 bg-slate-100 rouded-lg'>
+                <div key={user.email} className='flex items-center gap-2 p-2 bg-slate-100 rouded-lg'>
                    <span>{user.icon}</span> {user.userName}
-                   <span className='text-xl hover:cursor-pointer hover:bg-slate-300 rounded-full' onClick={()=>handleRemove(user)}><IoMdClose/></span>
+                   <span className='hover:cursor-pointer hover:bg-slate-300 rounded-full' onClick={()=>handleRemove(user)}><IoMdClose/></span>
                 </div>
             ))}
         </div>
