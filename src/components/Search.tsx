@@ -20,6 +20,7 @@ export default function Search() {
    removeFromAllUsers(user.userName)
    addToSelected(user)
    setQuery("")
+   filterAllUser("")
   }
 
   const handleSearch=(e:React.ChangeEvent<HTMLInputElement>)=>{
