@@ -39,7 +39,7 @@ export default function App() {
             </p>
             {showContinue ? (
               <button
-                className=" hover:bg-blue-500 hover:text-white hover:border-blue-500 animate-bounce mt-7 p-3 border border-black rounded-xl"
+                className=" hover:bg-blue-500 hover:text-white hover:border-blue-500 animate-bounce mt-7 p-3 border border-blue-700 rounded-xl"
                 onClick={() => setShowIntro(false)}
               >
                 Continue
@@ -51,7 +51,7 @@ export default function App() {
           <div className="loader"></div>
         </div>
       ) : (
-        <div className="flex flex-col  sm:h-[90vh] items-center justify-between p-4 mt-4">
+        <div className="flex flex-col h-[90vh] items-center justify-between p-4 mt-4">
           <div className="w-full sm:w-1/2 flex flex-col gap-7">
             <p className="text-xl font-bold text-blue-500">
               Pick User{" "}
